@@ -18,7 +18,7 @@ router.get(
 );
 
 router.put(
-  "/document/:id",
+  "/documents/:id",
   authMiddleware,
   roleCheck("edit"),
   documentControllers.updateDocument

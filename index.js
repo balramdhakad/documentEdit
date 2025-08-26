@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:true}))
 //router
 app.use("/api/auth",require("./backend/Routes/authRoutes"))
 app.use("/api/doc",require("./backend/Routes/documentRoutes"))
-app.use("/api/version",require("./backend/Routes/documentRoutes"))
+app.use("/api/version",require("./backend/Routes/versionRoutes"))
 
 app.listen(PORT,()=>{
     console.log(`server is running at PORT : ${PORT}`)

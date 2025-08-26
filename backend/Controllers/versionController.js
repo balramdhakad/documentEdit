@@ -64,6 +64,6 @@ const getRollCommit = async (req, res) => {
   }
 };
 
-const versionControllers = { updateDocument, rollBack, getRollCommit };
+const versionControllers = { rollBack, getRollCommit };
 
 module.exports = versionControllers;
