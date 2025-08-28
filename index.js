@@ -1,8 +1,13 @@
 const express = require("express")
 const connectDB = require("./backend/Config/dbConfig")
 require("dotenv").config()
+const http = require("http");
+const setupSocketServer = require("./backend/socket/socketServer");
+
+
 
 const app = express()
+const server = http.createServer(app);
 const PORT = process.env.PORT || 5000
 
 //DATABASE CONNECTION
@@ -17,6 +22,8 @@ app.use("/api/auth",require("./backend/Routes/authRoutes"))
 app.use("/api/doc",require("./backend/Routes/documentRoutes"))
 app.use("/api/version",require("./backend/Routes/versionRoutes"))
 
-app.listen(PORT,()=>{
+setupSocketServer(server);
+
+server.listen(PORT,()=>{
     console.log(`server is running at PORT : ${PORT}`)
 })

@@ -160,6 +160,9 @@ const updateDocument = async (req, res) => {
 };
 
 
+
+
+
 const documentControllers = {deleteDocument,shareDocument,getAllDocument,getSingleDocument,createDocument,updateDocument}
 
 module.exports = documentControllers

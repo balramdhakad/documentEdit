@@ -17,12 +17,27 @@ router.get(
   documentControllers.getSingleDocument
 );
 
+
+//for save button
 router.put(
   "/documents/:id",
   authMiddleware,
   roleCheck("edit"),
   documentControllers.updateDocument
 );
+
+
+//call this function when hit edit button
+router.get(
+  "/documents/:id/edit",
+  authMiddleware,
+  roleCheck("edit"),
+  async(req,res)=>{
+    res.status(200),json({message : "Permission granted"})
+  }
+);
+
+
 
 router.delete(
   "/documents/:id",
